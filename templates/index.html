@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Wanna play?</h1>
+
+    <form action="/players" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <label for="choice">Choice</label>
+        <input type="text" choice="choice">
+        <input type="submit" value="play">
+    </form>
+
+{% for player in players %}
+<div>
+    <h2>{{ player.name }}</h2>
+    <h3>{{ player.choice }}</h3>
+</div>
+
+{% endfor %}
+
+{% endblock %}
